@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "INFRA-INTEL-data-ingest"
+version = "0.1.0"
+description = ""
+authors = ["Deere Infrastructure Intelligence <GlobalITIOInfraTeam-HowellDeere@JohnDeere.com>"]
+readme = "README.md"
+packages = [
+    { include = "notebooks" },
+]
+
+# INFRA-INTEL UPDATE PACKAGES AS NEEDED
+[tool.poetry.dependencies]
+python = "^3.10"
+ipynb = "^0.5.1"
+black = {extras = ["jupyter"], version = "^23.3.0"}
+ipytest = "^0.13.3"
+nbformat = "^5.9.0"
+pyspark = "^3.4.0"
+nbconvert = "^7.4.0"
+invoke = "^2.1.2"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    'ignore::pytest.PytestAssertRewriteWarning'
+]

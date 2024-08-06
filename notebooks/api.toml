@@ -1,0 +1,20 @@
+[api]
+lab = "https://204.53.86.201"
+prod = "https://zdxapic.dx.deere.com"
+
+[endpoint]
+login = '/api/aaaLogin.json'
+node = '/api/node/mo/topology/pod-{pod}.json?query-target=children&target-subtree-class=fabricNode&query-target-filter=and(not(wcard(fabricNode.dn,"__ui_")),and(ne(fabricNode.role,"controller")))'
+phystate = '/api/node/class/topology/pod-{pod}/node-{leaf_dn}/l1PhysIf.json?rsp-subtree=children&rsp-subtree-class=ethpmPhysIf&order-by=l1PhysIf.id|asc'
+interface_details = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/phys-[{interface_id}]/phys.json?query-target=children&target-subtree-class=ethpmFcot'
+tcam = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/eqptcapacity/CDeqptcapacityPolUsage5min.json'
+chassis = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}.json?query-target=subtree&target-subtree-class=eqptCh'
+linecard = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/ch.json?query-target=subtree&target-subtree-class=eqptLC'
+cpus = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/procsys/HDprocSysCPU5min-0.json'
+memory = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/procsys/HDprocSysMem5min-0.json'
+temp = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/ch/supslot-1/sup/sensor-1/CDeqptTemp5min.json'
+pow_supp_1 = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/ch/psuslot-1/psu.json?query-target=self'
+pow_supp_2 = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/ch/psuslot-2/psu.json?query-target=self'
+root_file = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/eqptcapacity/fspartition-root.json?query-target=self'
+lpm = '/api/node/mo/topology/pod-{pod}/node-{leaf_dn}/sys/eqptcapacity/CDeqptcapacityPrefixEntries5min.json'
+
